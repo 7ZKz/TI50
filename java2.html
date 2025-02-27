@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,52 +8,97 @@
 </head>
 
 <style>
-.oculto{
-    display: none;
-}
-
+    .oculto {
+        display: none;
+    }
 </style>
 
 <body>
-<div>
-    <h1>manipular visibilidade</h1>
+    <div> <!--manipular visibilidade-->
+        <h1>manipular visibilidade</h1>
 
-    <button id="btn" onclick="mostrar()">mostrar</button>
-    <button id="btn2" style="display: none;" onclick="ocultar()">ocultar</button>
+        <button id="btn" onclick="mostrar()">mostrar</button>
+        <button id="btn2" style="display: none;" onclick="ocultar()">ocultar</button>
 
-    <p id="msg" style="display: none;">ola mundo</p>
-</div>
-    <script>
-        function mostrar() {
-            document.getElementById('msg').style.display = 'block';
-            document.getElementById('btn').style.display = 'none';
-            document.getElementById('btn2').style.display = 'block';
+        <p id="msg" style="display: none;">ola mundo</p>
 
-        }
-        function ocultar() {
-            document.getElementById('msg').style.display = 'none';
-            document.getElementById('btn').style.display = 'block';
-            document.getElementById('btn2').style.display = 'none';
+        <script>
+            function mostrar() {
+                document.getElementById('msg').style.display = 'block';
+                document.getElementById('btn').style.display = 'none';
+                document.getElementById('btn2').style.display = 'block';
 
-        }
+            }
+            function ocultar() {
+                document.getElementById('msg').style.display = 'none';
+                document.getElementById('btn').style.display = 'block';
+                document.getElementById('btn2').style.display = 'none';
 
-</script>
+            }
 
-<h2>alternando classe</h2>
-<button onclick="mostrar2()" id="btn3">clique aqui</button>
-<p class="oculto" id="msg2">ola mundo</p>
+        </script>
 
-<script>
-        function mostrar2(){
-            let mensagem = document.getElementById('msg2');
-            let botao = document.getElementById('btn3');
+    </div> <!--manipular visibilidade-->
 
-            mensagem.classList.toggle('oculto');
-            botao.innerText = mensagem.classList.contains('oculto')?
-            'Mostrar' : 'Ocultar';
-        }
+    <div> <!--alternando visibilidade-->
+        <h2>alternando classe</h2>
+        <button onclick="mostrar2()" id="btn3">clique aqui</button>
+        <p class="oculto" id="msg2">ola mundo</p>
 
-</script>
+        <script>
+            function mostrar2() {
+                let mensagem = document.getElementById('msg2');
+                let botao = document.getElementById('btn3');
+
+                mensagem.classList.toggle('oculto');
+                botao.innerText = mensagem.classList.contains('oculto') ?
+                    'Mostrar' : 'Ocultar';
+            }
+
+        </script>
+    </div> <!--alternando visibilidade-->
+
+    <div> <!--Alertas-->
+        <h2>via console</h2>
+        <button onclick="console.log('ola mundo')">console</button>
+
+        <h2>via alerta</h2>
+        <button onclick="alert('ola mundo')">alerta</button>
+
+        <h2>via documento</h2>
+        <button onclick="document.write('ola mundo')" target_blank>documento</button>
+    </div> <!--Alertas-->
+
+    <div> <!--variáveis-->
+        <h1>Variáveis</h1>
+    
+        <script>
+            let variavel; // Declara uma variável
+            variavel = 10; // Atribui um valor à variável
+    
+            let variavel12 = 'senac'; // Declara e atribui um valor à variável
+    
+            console.log(variavel); // Exibe valor da variável no console
+            console.log(variavel12); // Exibe valor da variável no console
+
+            console.log(vaviavel12);
+            console.log(typeof variavel12);
+
+            let variavel13 = true
+            console.log(vaviavel13);
+            console.log(typeof variavel13);
+
+            let variavel14 = document.getElementById('msg')
+            console.log(vaviavel14);
+            console.log(typeof variavel14);
+            
+            variavel = 20;
+            console.log(vaviavel);
+        
+        </script>
+    </div> <!--variáveis-->
+    
 
 </body>
+
 </html>
