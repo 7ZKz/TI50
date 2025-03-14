@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validação de formulario com javascrip</title>
+        <style>
+
+            #mensagem{
+                display: none;
+            }
+
+            .invalido{
+            color:rgb(255, 0, 0);
+            }
+
+            .valido{
+            color:rgb(0, 255, 0);
+            }
+
+
+        </style>
+</head>
+<body>
+    <form action="">
+        <input type="password" name="senha" id="senha" 
+        placeholder="Digite sua senha" onkeyup="valida()">
+
+        <div id="mensagem">
+        <p id="minuscula">A senha deve conter pelo menos uma letra minuscula</p>
+        <p id="maiuscula">A senha deve conter pelo menos uma letra maiuscula</p>
+        <p id="numero">A senha deve conter pelo menos um numero</p>
+        <p id="caracter">A senha deve conter pelo menos um caracter especial</p>
+        <p id="minimo">A senha deve conter no minimo 8 caracteres</p>
+        </div>
+
+        <input type="submit" value="Enviar" >
+        <p id="enviar"></p>
+    </form>
+
+
+    <script>
+        function valida(){
+
+            document.getElementById('mensagem').style.display = 'block';
+            let senha = document.getElementById('senha').value;
+            let minuscula = document.getElementById('minuscula');
+            let maiuscula = document.getElementById('maiuscula');
+            let numero = document.getElementById('numero');
+            let caracter = document.getElementById('caracter');
+            let minimo = document.getElementById('minimo');
+
+            if(senha.match(/[a-z]/)){
+                minuscula.classList.remove('invalido');
+                minuscula.classList.add('valido');
+            }else{
+                minuscula.classList.remove('valido');
+                minuscula.classList.add('invalido');
+            }
+
+            if(senha.match(/[A-Z]/)){
+                maiuscula.classList.remove('invalido');
+                maiuscula.classList.add('valido');
+            }else{
+                maiuscula.classList.remove('valido')
+                maiuscula.classList.add('invalido');
+            }
+
+            if(senha.match(/[0-9]/)){
+                numero.classList.remove('invalido');
+                numero.classList.add('valido');
+
+            }else{
+                numero.classList.remove('valido');
+                numero.classList.add('invalido');
+            }
+
+            if(senha.match(/[\W_]/)){
+                caracter.classList.remove('invalido');
+                caracter.classList.add('valido');
+            }else{
+                caracter.classList.remove('valido');
+                caracter.classList.add('invalido');
+            }
+
+            if(senha.match(/.{8,}/)){
+                minimo.classList.remove('invalido');
+                minimo.classList.add('valido');
+
+            }else{
+                minimo.classList.remove('valido');
+                minimo.classList.add('invalido');
+            }
+
+            if(senha.match(/[a-z]/) && senha.match(/[A-Z]/) && senha.match(/[0-9]/) && senha.match(/[\W_]/) && senha.match(/.{8,}/)){
+                document.getElementById('enviar').disabled = false;
+            }
+
+        }
+
+
+    </script>
+    
+
+</body>
+</html>
